@@ -19,9 +19,39 @@ body {
 #root {
   padding: 0 1.2rem;
 }
+
+@media (max-height: 57em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+
+@media (max-height: 52em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media (max-height: 46em) {
+  html {
+    font-size: 42%;
+  }
+
+  .wrapper {
+    gap: 1.2rem;
+  }
+}
+
 @media (max-width: 43em) {
   html {
     font-size: 56.25%;
+  }
+}
+
+@media (max-height: 37em) {
+  .card {
+    height: 12rem;
+    width: 9rem;
   }
 }
 @media (max-width: 36em) {
@@ -46,3 +76,5 @@ body {
     font-size: 25%;
   }
 }
+
+/* !Temporay styles  */
