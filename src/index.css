@@ -16,3 +16,33 @@ body {
   justify-content: center;
   align-items: center;
 }
+#root {
+  padding: 0 1.2rem;
+}
+@media (max-width: 43em) {
+  html {
+    font-size: 56.25%;
+  }
+}
+@media (max-width: 36em) {
+  html {
+    font-size: 45%;
+  }
+}
+@media (max-width: 29em) {
+  html {
+    font-size: 35%;
+  }
+}
+
+@media (max-width: 22em) {
+  html {
+    font-size: 30%;
+  }
+}
+
+@media (max-width: 18em) {
+  html {
+    font-size: 25%;
+  }
+}
