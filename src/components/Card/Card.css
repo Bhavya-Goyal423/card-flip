@@ -14,7 +14,7 @@
   transition: all 0.3s ease-in-out;
 }
 
-.card.closed:hover {
+.card:hover {
   transform: scale(1.04);
 }
 

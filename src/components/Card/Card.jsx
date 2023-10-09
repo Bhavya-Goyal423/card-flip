@@ -12,7 +12,12 @@ export default function Card({ card, index, handleClick }) {
         className={`card card-back ${card.css}`}
         onClick={() => handleClick(index, card.cardId)}
       >
-        <img className="card-back-img" src="/img/cardback.jpg" alt="card" />
+        <img
+          className="card-back-img"
+          src="/img/cardback.jpg"
+          alt="card"
+          draggable="false"
+        />
       </div>
     </ReactCardFlip>
   );

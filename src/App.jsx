@@ -7,6 +7,7 @@ function App() {
   const [cards, setCards] = useState(data.sort(() => Math.random() - 0.5));
   const [prev, setPrev] = useState(null);
   const [isClickable, setIsClickable] = useState(true);
+  const [moves, setMoves] = useState(0);
   const [gameEnd, setGameEnd] = useState(false);
 
   const handleClick = (id, cardID) => {
@@ -23,6 +24,7 @@ function App() {
       setIsClickable(true);
     } else if (cardID === prev) {
       setIsClickable(false);
+      setMoves((moves) => moves + 1);
       setCards((cards) =>
         cards.map((c) =>
           c.cardId === cardID
@@ -34,6 +36,7 @@ function App() {
       setIsClickable(true);
     } else {
       setIsClickable(false);
+      setMoves((moves) => moves + 1);
       setCards((cards) =>
         cards.map((c) =>
           c.cardId === cardID || c.cardId === prev
@@ -57,6 +60,7 @@ function App() {
 
   const handleNewGame = () => {
     setPrev(null);
+    setMoves(0);
     setCards((cards) =>
       cards
         .map((card) => ({ ...card, status: "flipped", css: "" }))
@@ -86,6 +90,7 @@ function App() {
         data={cards}
         handleNewGame={handleNewGame}
         handleClick={handleClick}
+        moves={moves}
       />
     </>
   );
