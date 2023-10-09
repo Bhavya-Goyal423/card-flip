@@ -1,0 +1,37 @@
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background-color: rgb(253, 253, 224);
+  font-size: 7rem;
+  box-shadow: 0 0 1rem 0.3rem rgb(0, 0, 0, 0.1);
+  height: 16rem;
+  width: 12rem;
+  border-radius: 11px;
+  border: 1px solid black;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.card.closed:hover {
+  transform: scale(1.04);
+}
+
+.card-back {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-back-img {
+  width: 100%;
+  height: 100%;
+  border-radius: 11px;
+}
+.card.correct {
+  background-color: #68b984;
+}
+.card.wrong {
+  background-color: #d61355;
+}

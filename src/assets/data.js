@@ -1,0 +1,18 @@
+export const data = [
+  { cardId: 1, fruit: "🍎", status: "closed", css: "" },
+  { cardId: 1, fruit: "🍎", status: "closed", css: "" },
+  { cardId: 2, fruit: "🥭", status: "closed", css: "" },
+  { cardId: 2, fruit: "🥭", status: "closed", css: "" },
+  { cardId: 3, fruit: "🍌", status: "closed", css: "" },
+  { cardId: 3, fruit: "🍌", status: "closed", css: "" },
+  { cardId: 4, fruit: "🍇", status: "closed", css: "" },
+  { cardId: 4, fruit: "🍇", status: "closed", css: "" },
+  { cardId: 5, fruit: "🍈", status: "closed", css: "" },
+  { cardId: 5, fruit: "🍈", status: "closed", css: "" },
+  { cardId: 6, fruit: "🍑", status: "closed", css: "" },
+  { cardId: 6, fruit: "🍑", status: "closed", css: "" },
+  { cardId: 7, fruit: "🍋", status: "closed", css: "" },
+  { cardId: 7, fruit: "🍋", status: "closed", css: "" },
+  { cardId: 8, fruit: "🍐", status: "closed", css: "" },
+  { cardId: 8, fruit: "🍐", status: "closed", css: "" },
+];
