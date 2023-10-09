@@ -2,13 +2,18 @@ import "./App.css";
 import CardList from "./components/CardList/CardList";
 import { data } from "./assets/data.js";
 import { useEffect, useState } from "react";
+import useSound from "use-sound";
+import cardsound from "/sound/cardsound.mp3";
+import flipcard from "/sound/flipcard.mp3";
 
 function App() {
   const [cards, setCards] = useState(data.sort(() => Math.random() - 0.5));
   const [prev, setPrev] = useState(null);
   const [isClickable, setIsClickable] = useState(true);
   const [moves, setMoves] = useState(0);
-  const [gameEnd, setGameEnd] = useState(false);
+  const [playflip] = useSound(flipcard);
+  const [playcard] = useSound(cardsound);
+  // const [gameEnd, setGameEnd] = useState(false);
 
   const handleClick = (id, cardID) => {
     if (!isClickable) return;
@@ -20,10 +25,12 @@ function App() {
 
     if (prev === null) {
       setIsClickable(false);
+      playflip();
       setPrev(cardID);
       setIsClickable(true);
     } else if (cardID === prev) {
       setIsClickable(false);
+      playflip();
       setMoves((moves) => moves + 1);
       setCards((cards) =>
         cards.map((c) =>
@@ -36,6 +43,7 @@ function App() {
       setIsClickable(true);
     } else {
       setIsClickable(false);
+      playflip();
       setMoves((moves) => moves + 1);
       setCards((cards) =>
         cards.map((c) =>
@@ -59,6 +67,7 @@ function App() {
   };
 
   const handleNewGame = () => {
+    playcard();
     setPrev(null);
     setMoves(0);
     setCards((cards) =>
@@ -70,10 +79,12 @@ function App() {
       setCards((cards) =>
         cards.map((card) => ({ ...card, status: "closed", css: "" }))
       );
+      playcard();
     }, 2000);
   };
 
   useEffect(() => {
+    playcard();
     setCards((cards) =>
       cards
         .map((card) => ({ ...card, status: "flipped", css: "" }))
@@ -81,8 +92,9 @@ function App() {
     );
     setTimeout(() => {
       setCards((cards) => cards.map((card) => ({ ...card, status: "closed" })));
+      playcard();
     }, 2000);
-  }, []);
+  }, [playcard]);
 
   return (
     <>
