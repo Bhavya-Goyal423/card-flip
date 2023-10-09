@@ -49,13 +49,17 @@ function App() {
       playflip();
       setMoves((moves) => moves + 1);
       setMisses((misses) => misses + 1);
-      setCards((cards) =>
-        cards.map((c) =>
-          c.cardId === cardID || c.cardId === prev
-            ? { ...c, css: "wrong" }
-            : { ...c }
-        )
-      );
+      setTimeout(() => {
+        setCards((cards) =>
+          cards.map((c) =>
+            (c.cardId === cardID && c.status === "flipped") ||
+            (c.cardId === prev && c.status === "flipped")
+              ? { ...c, css: "wrong" }
+              : { ...c }
+          )
+        );
+      }, 500);
+
       setTimeout(() => {
         setCards((cards) =>
           cards.map((c) =>
@@ -66,7 +70,7 @@ function App() {
         );
         setPrev(null);
         setIsClickable(true);
-      }, 500);
+      }, 700);
     }
   };
 

@@ -39,3 +39,19 @@
 .card.wrong {
   background-color: #d61355;
 }
+
+.card-front.wrong {
+  animation: vibrate 0.3s ease-in-out;
+}
+
+@keyframes vibrate {
+  0% {
+    transform: translateX(-10%);
+  }
+  50% {
+    transform: translateX(10%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
