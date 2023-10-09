@@ -8,8 +8,25 @@ export default function CardList({
   moves,
   misses,
   isGameEnded,
+  timer,
 }) {
-  console.log(isGameEnded);
+  const formatTime = (time) => {
+    const seconds = time % 60;
+    const minutes = Math.floor(time / 60);
+
+    return `${minutes}:${seconds}`;
+  };
+
+  const converTime = (timer) => {
+    const result = formatTime(timer).split(":");
+    const minute = result[0];
+    const second = result[1];
+
+    if (minute === "0") return `${second} seconds`;
+    else if (minute === "1") return `${minute} minute and ${second} seconds`;
+    else return `${minute} minutes and ${second} seconds`;
+  };
+
   return (
     <div className="wrapper">
       <div className="stats">
@@ -38,7 +55,7 @@ export default function CardList({
           style={{ display: `${isGameEnded ? "flex" : "none"}` }}
         >
           <p>
-            You <span>Won!</span>
+            Congrats you solved it in <span>{converTime(timer)}</span>
           </p>
           <p>
             Click <span>New game</span> To start again
