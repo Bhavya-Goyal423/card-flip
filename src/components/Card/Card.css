@@ -2,10 +2,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
-
-  background-color: rgb(253, 253, 224);
+  background: linear-gradient(
+      to bottom right,
+      rgba(0, 0, 0, 0.395),
+      rgba(255, 255, 255, 0.233)
+    ),
+    #e4e4ca;
   font-size: 7rem;
-  box-shadow: 0 0 1rem 0.3rem rgb(0, 0, 0, 0.1);
+  box-shadow: 0 0 1rem 0.1rem rgb(0, 0, 0, 0.5);
   height: 16rem;
   width: 12rem;
   border-radius: 11px;

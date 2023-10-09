@@ -14,7 +14,8 @@ function App() {
   const [misses, setMisses] = useState(0);
   const [playflip] = useSound(flipcard);
   const [playcard] = useSound(cardsound);
-  // const [gameEnd, setGameEnd] = useState(false);
+  const [matchPair, setMatchPair] = useState(0);
+  const gameEnded = matchPair === 8 ? true : false;
 
   const handleClick = (id, cardID) => {
     if (!isClickable) return;
@@ -40,6 +41,7 @@ function App() {
             : { ...c }
         )
       );
+      setMatchPair((matchPair) => matchPair + 1);
       setPrev(null);
       setIsClickable(true);
     } else {
@@ -73,6 +75,7 @@ function App() {
     setPrev(null);
     setMoves(0);
     setMisses(0);
+    setMatchPair(0);
     setCards((cards) =>
       cards
         .map((card) => ({ ...card, status: "flipped", css: "" }))
@@ -107,6 +110,7 @@ function App() {
         handleClick={handleClick}
         moves={moves}
         misses={misses}
+        isGameEnded={gameEnded}
       />
     </>
   );

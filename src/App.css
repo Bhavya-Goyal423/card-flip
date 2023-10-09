@@ -5,6 +5,8 @@
   gap: 2.4rem;
   padding: 2.4rem;
   border: 10px solid black;
+  border: 10px solid #29262b;
   border-radius: 11px;
-  /* background-color: green; */
+  background: none;
+  position: relative;
 }

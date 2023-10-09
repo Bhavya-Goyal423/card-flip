@@ -7,7 +7,9 @@ export default function CardList({
   handleClick,
   moves,
   misses,
+  isGameEnded,
 }) {
+  console.log(isGameEnded);
   return (
     <div className="wrapper">
       <div className="stats">
@@ -31,6 +33,17 @@ export default function CardList({
         </p>
       </div>
       <div className="container">
+        <div
+          className="win-stage"
+          style={{ display: `${isGameEnded ? "flex" : "none"}` }}
+        >
+          <p>
+            You <span>Won!</span>
+          </p>
+          <p>
+            Click <span>New game</span> To start again
+          </p>
+        </div>
         {data.map((card, idx) => (
           <Card key={idx} card={card} index={idx} handleClick={handleClick} />
         ))}
