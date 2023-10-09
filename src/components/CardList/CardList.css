@@ -11,6 +11,11 @@
   border-radius: 11px;
   cursor: pointer;
 }
-.moves-count {
+.moves-count,
+.misses-count {
   font-size: 2.6rem;
+}
+.stats {
+  display: flex;
+  gap: 2.4rem;
 }
